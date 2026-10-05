@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Angel Team — Школа фигурного катания · Нижний Новгород</title>
+
+  <!-- SEO -->
+  <meta name="description" content="Angel Team — академия фигурного катания в Нижнем Новгороде. Тренеры-чемпионы, профессиональный лёд, малые группы. ТРЦ «Океанис» и ТРЦ «Рио». Запишитесь на пробное занятие." />
+  <meta name="keywords" content="фигурное катание Нижний Новгород, школа фигурного катания, Angel Team, пробное занятие, фигурное катание для детей, взрослые фигурное катание" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://angelteam-nn.ru/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="ru_RU" />
+  <meta property="og:site_name" content="Angel Team" />
+  <meta property="og:title" content="Angel Team — Твой лёд. Твоя история." />
+  <meta property="og:description" content="Академия фигурного катания в Нижнем Новгороде. Тренеры-чемпионы, профессиональный лёд, индивидуальный подход." />
+  <meta property="og:url" content="https://angelteam-nn.ru/" />
+  <meta property="og:image" content="https://angelteam-nn.ru/assets/img/og-cover.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;700;800&family=Manrope:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@1,400;1,500&display=swap" rel="stylesheet" />
+
+  <!-- Design system -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SportsActivityLocation",
+        "name": "Angel Team — Школа фигурного катания",
+        "slogan": "Твой лёд. Твоя история.",
+        "url": "https://angelteam-nn.ru/",
+        "telephone": "+7 (831) 000-00-00",
+        "email": "hello@angelteam-nn.ru",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Нижний Новгород",
+          "addressCountry": "RU"
+        },
+        "geo": { "@type": "GeoCoordinates", "latitude": 56.2836, "longitude": 43.9825 },
+        "openingHours": "Mo-Su 08:00-22:00",
+        "priceRange": "₽₽",
+        "sameAs": ["https://t.me/angelteam_nn", "https://vk.com/angelteam_nn"]
+      },
+      {
+        "@type": "LocalBusiness",
+        "name": "Angel Team — ледовая арена ТРЦ «Океанис»",
+        "parentOrganization": { "@type": "Organization", "name": "Angel Team" },
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "просп. Гагарина, 35, ТРЦ «Океанис»",
+          "addressLocality": "Нижний Новгород",
+          "addressCountry": "RU"
+        }
+      },
+      {
+        "@type": "LocalBusiness",
+        "name": "Angel Team — ледовая арена ТРЦ «Рио»",
+        "parentOrganization": { "@type": "Organization", "name": "Angel Team" },
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Московское ш., 12, ТРЦ «Рио»",
+          "addressLocality": "Нижний Новгород",
+          "addressCountry": "RU"
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Перейти к содержимому</a>
+
+  <!-- Snow canvas -->
+  <canvas id="snow" aria-hidden="true"></canvas>
+
+  <!-- ===== NAVBAR ===== -->
+  <header class="nav" data-nav>
+    <div class="container nav__inner">
+      <a class="logo" href="index.html" aria-label="Angel Team — на главную">
+        <svg class="logo__mark" viewBox="0 0 100 100" fill="none" aria-hidden="true">
+          <g class="flake" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M50 4v92"/>
+            <path d="M11 27.5l78 45"/>
+            <path d="M11 72.5l78-45"/>
+            <path d="M50 20l-9 8M50 20l9 8"/>
+            <path d="M50 80l-9-8M50 80l9-8"/>
+            <path d="M34 41l-8 9M34 41l8-9"/>
+            <path d="M66 59l8-9M66 59l-8 9"/>
+            <circle cx="50" cy="50" r="3" fill="currentColor" stroke="none"/>
+          </g>
+        </svg>
+        <span class="logo__word">Angel Team<span class="logo__sub">школа фигурного катания</span></span>
+      </a>
+
+      <nav class="nav__menu" id="menu" aria-label="Основная навигация">
+        <a class="nav__link" href="programs.html">Программы</a>
+        <a class="nav__link" href="trainers.html">Тренеры</a>
+        <a class="nav__link" href="schedule.html">Расписание</a>
+        <a class="nav__link" href="parents.html">Родителям</a>
+        <a class="nav__link" href="about.html">О школе</a>
+        <a class="nav__link" href="blog.html">Блог</a>
+        <a class="nav__link" href="contacts.html">Контакты</a>
+        <button class="nav__theme" data-theme-toggle aria-label="Переключить тему" aria-pressed="false">
+          <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.6 4.6l1.8 1.8M17.6 17.6l1.8 1.8M4.6 19.4l1.8-1.8M17.6 6.4l1.8-1.8"/></svg>
+          <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg>
+          <span>Тема</span>
+        </button>
+      </nav>
+
+      <div class="nav__actions">
+        <button class="icon-btn theme-toggle" data-theme-toggle aria-label="Переключить тему" aria-pressed="false">
+          <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.6 4.6l1.8 1.8M17.6 17.6l1.8 1.8M4.6 19.4l1.8-1.8M17.6 6.4l1.8-1.8"/></svg>
+          <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg>
+        </button>
+        <a class="btn btn-primary btn-sm nav__cta" href="#trial">Записаться</a>
+        <button class="burger nav__burger" aria-label="Открыть меню" aria-expanded="false" aria-controls="menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ===== HERO ===== -->
+    <section class="hero">
+      <div class="hero__bg" aria-hidden="true">
+        <video class="hero__video" autoplay muted loop playsinline preload="metadata">
+          <source src="assets/img/hero.mp4" type="video/mp4" />
+        </video>
+        <div class="hero__veil"></div>
+        <span class="hero__beam hero__beam--1"></span>
+        <span class="hero__beam hero__beam--2"></span>
+        <span class="hero__beam hero__beam--3"></span>
+      </div>
+
+      <div class="container hero__inner">
+        <p class="eyebrow reveal">Школа фигурного катания · Нижний Новгород</p>
+        <h1 class="display display--xl hero__title reveal" data-delay="1">
+          Твой лёд.<br /><span class="text-gradient">Твоя история.</span>
+        </h1>
+        <p class="hero__sub reveal" data-delay="2">
+          Angel Team — академия фигурного катания для детей и взрослых.
+          Тренеры-чемпионы, профессиональный лёд и индивидуальный подход
+          в самом центре города.
+        </p>
+        <div class="hero__cta reveal" data-delay="3">
+          <a class="btn btn-primary btn-lg" href="#trial">Пробное занятие</a>
+          <a class="btn btn-ghost btn-lg" href="programs.html">Программы</a>
+        </div>
+
+        <div class="hero__stats reveal" data-delay="4">
+          <div class="stat"><div class="stat__num"><span data-count="12">12</span></div><div class="stat__label">лет на льду</div></div>
+          <div class="stat"><div class="stat__num"><span data-count="800" data-suffix="+">0</span></div><div class="stat__label">учеников</div></div>
+          <div class="stat"><div class="stat__num"><span data-count="15">0</span></div><div class="stat__label">тренеров-мастеров</div></div>
+          <div class="stat"><div class="stat__num"><span data-count="2">0</span></div><div class="stat__label">ледовые арены</div></div>
+        </div>
+      </div>
+
+      <div class="hero__scroll" aria-hidden="true"><span>листайте</span><span class="line"></span></div>
+    </section>
+
+    <!-- ===== PHILOSOPHY ===== -->
+    <section class="section">
+      <div class="container">
+        <p class="eyebrow reveal">Философия школы</p>
+        <h2 class="display display--lg reveal" data-delay="1">Мы формируем характер и грацию</h2>
+        <div class="grid-3 mt-3">
+          <article class="glass feature reveal" data-ice-sound>
+            <div class="feature__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg>
+            </div>
+            <h3>Характер</h3>
+            <p>Лёд учит падать и вставать. Мы растим не только спортсменов, но и людей, которые умеют держать удар и идти к цели.</p>
+          </article>
+          <article class="glass feature reveal" data-delay="1" data-ice-sound>
+            <div class="feature__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4z"/></svg>
+            </div>
+            <h3>Грация</h3>
+            <p>Движение на льду — это язык тела. Мы ставим осанку, выразительность и красоту линии в каждом элементе.</p>
+          </article>
+          <article class="glass feature reveal" data-delay="2" data-ice-sound>
+            <div class="feature__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r="1"/></svg>
+            </div>
+            <h3>Дисциплина</h3>
+            <p>Маленькие победы каждый день. Система, регулярность и внимание к деталям — то, что превращает усилия в результат.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PROGRAMS ===== -->
+    <section class="section section--tight">
+      <div class="container">
+        <div class="flex items-center justify-between flex-wrap gap-2 mb-0">
+          <div>
+            <p class="eyebrow reveal">Программы</p>
+            <h2 class="display display--lg reveal" data-delay="1">Найди свою траекторию</h2>
+          </div>
+          <a class="btn btn-ghost btn-sm reveal" data-delay="2" href="programs.html">Все программы</a>
+        </div>
+
+        <div class="grid-4 mt-3">
+          <a class="glass card-link program-card reveal" href="programs.html" data-ice-sound>
+            <div class="program-card__media">
+              <svg viewBox="0 0 320 200" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+                <rect width="320" height="200" fill="#16233f"/>
+                <g fill="none" stroke="#00E5FF" stroke-opacity=".55" stroke-linecap="round">
+                  <path d="M40 120 Q160 30 280 120" stroke-width="2"/>
+                  <path d="M60 150 Q160 60 260 150" stroke-width="1"/>
+                  <path d="M120 40l4-8M120 40l-4-8M200 60l4 8M200 60l-4 8" stroke-width="2"/>
+                </g>
+              </svg>
+              <span class="program-card__tag">3–5 лет</span>
+            </div>
+            <div class="program-card__body">
+              <h3>Малыши</h3>
+              <div class="program-card__meta">Первый лёд · игра</div>
+              <p>Первые шаги на коньках через игру: равновесие, скольжение и радость движения.</p>
+              <span class="program-card__link">Подробнее <span class="arr" aria-hidden="true">→</span></span>
+            </div>
+          </a>
+
+          <a class="glass card-link program-card reveal" data-delay="1" href="programs.html" data-ice-sound>
+            <div class="program-card__media">
+              <svg viewBox="0 0 320 200" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+                <rect width="320" height="200" fill="#13203c"/>
+                <g fill="none" stroke="#A8B8E8" stroke-opacity=".55" stroke-linecap="round">
+                  <circle cx="160" cy="130" r="70" stroke-width="1.5"/>
+                  <circle cx="160" cy="130" r="40" stroke-width="1"/>
+                  <path d="M60 90 Q160 40 260 90" stroke-width="2"/>
+                </g>
+              </svg>
+              <span class="program-card__tag">6–12 лет</span>
+            </div>
+            <div class="program-card__body">
+              <h3>Юниоры</h3>
+              <div class="program-card__meta">База · техника</div>
+              <p>Системная база: скольжение, вращения, первые прыжки. Переход в спорт — по готовности.</p>
+              <span class="program-card__link">Подробнее <span class="arr" aria-hidden="true">→</span></span>
+            </div>
+          </a>
+
+          <a class="glass card-link program-card reveal" data-delay="2" href="programs.html" data-ice-sound>
+            <div class="program-card__media">
+              <svg viewBox="0 0 320 200" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+                <rect width="320" height="200" fill="#1a2845"/>
+                <g fill="none" stroke="#00E5FF" stroke-opacity=".6" stroke-linecap="round">
+                  <path d="M40 150 Q160 20 280 150" stroke-width="2"/>
+                  <path d="M160 40v120" stroke-width="1.5"/>
+                  <path d="M120 90h80" stroke-width="1"/>
+                </g>
+              </svg>
+              <span class="program-card__tag">6–17 лет</span>
+            </div>
+            <div class="program-card__body">
+              <h3>Спортивные группы</h3>
+              <div class="program-card__meta">Разряды · турниры</div>
+              <p>Подготовка к разрядам и соревнованиям. Индивидуальный план и сопровождение на стартах.</p>
+              <span class="program-card__link">Подробнее <span class="arr" aria-hidden="true">→</span></span>
+            </div>
+          </a>
+
+          <a class="glass card-link program-card reveal" data-delay="3" href="programs.html" data-ice-sound>
+            <div class="program-card__media">
+              <svg viewBox="0 0 320 200" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+                <rect width="320" height="200" fill="#101c36"/>
+                <g fill="none" stroke="#C7D2DC" stroke-opacity=".5" stroke-linecap="round">
+                  <path d="M30 160 Q160 140 290 100" stroke-width="2"/>
+                  <path d="M30 120 Q160 100 290 60" stroke-width="1"/>
+                  <path d="M230 50l10-12M230 50l2-16" stroke-width="2"/>
+                </g>
+              </svg>
+              <span class="program-card__tag">18+</span>
+            </div>
+            <div class="program-card__body">
+              <h3>Взрослые</h3>
+              <div class="program-card__meta">С нуля · любители</div>
+              <p>Мягкий старт для взрослых и техника для тех, кто уже катается. Вечерние слоты.</p>
+              <span class="program-card__link">Подробнее <span class="arr" aria-hidden="true">→</span></span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== JUMP LAB (unique #1) ===== -->
+    <section class="section">
+      <div class="container">
+        <p class="eyebrow reveal">Интерактив · Академия техники</p>
+        <h2 class="display display--lg reveal" data-delay="1">Анатомия прыжка</h2>
+        <p class="lead reveal" data-delay="2">Выберите элемент и посмотрите, как он устроен. Так мы учим — от понимания к движению.</p>
+
+        <div class="jump-lab mt-3" data-jump-lab>
+          <div class="reveal">
+            <div class="jump-tabs" role="tablist" aria-label="Виды прыжков">
+              <button class="jump-tab" data-jump="toe" role="tab">Тулуп</button>
+              <button class="jump-tab" data-jump="sal" role="tab">Сальхов</button>
+              <button class="jump-tab" data-jump="loop" role="tab">Риттбергер</button>
+              <button class="jump-tab" data-jump="flip" role="tab">Флип</button>
+              <button class="jump-tab" data-jump="lutz" role="tab">Лутц</button>
+              <button class="jump-tab" data-jump="axel" role="tab">Аксель</button>
+            </div>
+
+            <div class="jump-info mt-4">
+              <div class="meta" data-j-rev>1,5 оборота</div>
+              <h3 data-j-name>Аксель</h3>
+              <div class="jump-meter" aria-hidden="true"><div class="jump-meter__fill"></div></div>
+              <p data-j-desc>Единственный прыжок с захода вперёд.</p>
+            </div>
+          </div>
+
+          <div class="jump-stage reveal" data-delay="1" data-ice-sound>
+            <div class="jump-stage__ring" aria-hidden="true"></div>
+            <div class="jump-skater" aria-hidden="true">
+              <svg class="spin" viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="60" cy="25" r="9" fill="currentColor" stroke="none"/>
+                <path d="M60 34c-6 9-7 18-4 28"/>
+                <path d="M57 42 36 30"/>
+                <path d="M63 42 84 30"/>
+                <path d="M60 62l-11 32"/>
+                <path d="M49 94h22"/>
+                <path d="M60 62l13 26"/>
+                <path d="M73 88l9-7"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== COACHES ===== -->
+    <section class="section section--tight">
+      <div class="container">
+        <div class="flex items-center justify-between flex-wrap gap-2 mb-0">
+          <div>
+            <p class="eyebrow reveal">Тренеры</p>
+            <h2 class="display display--lg reveal" data-delay="1">Команда чемпионов</h2>
+          </div>
+          <a class="btn btn-ghost btn-sm reveal" data-delay="2" href="trainers.html">Все тренеры</a>
+        </div>
+
+        <div class="grid-4 mt-3">
+          <a class="glass card-link coach-card reveal" href="trainer.html" data-ice-sound>
+            <div class="coach-card__media">
+              <svg viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet" aria-label="Фото тренера Анны Волковой">
+                <circle cx="50" cy="36" r="17" fill="#A8B8E8"/>
+                <path d="M22 98c0-19 13-32 28-32s28 13 28 32z" fill="#A8B8E8"/>
+              </svg>
+              <div class="coach-card__glow"></div>
+            </div>
+            <div class="coach-card__body">
+              <h3>Анна Волкова</h3>
+              <div class="coach-card__role">Старший тренер · МС</div>
+              <p class="coach-card__rega">Чемпионка России в юниорах, 12 лет практики</p>
+            </div>
+          </a>
+
+          <a class="glass card-link coach-card reveal" data-delay="1" href="trainer.html" data-ice-sound>
+            <div class="coach-card__media">
+              <svg viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet" aria-label="Фото тренера Дмитрия Соколова">
+                <circle cx="50" cy="36" r="17" fill="#00E5FF"/>
+                <path d="M22 98c0-19 13-32 28-32s28 13 28 32z" fill="#00E5FF"/>
+              </svg>
+              <div class="coach-card__glow"></div>
+            </div>
+            <div class="coach-card__body">
+              <h3>Дмитрий Соколов</h3>
+              <div class="coach-card__role">Тренер · КМС</div>
+              <p class="coach-card__rega">Специализация — прыжковая техника</p>
+            </div>
+          </a>
+
+          <a class="glass card-link coach-card reveal" data-delay="2" href="trainer.html" data-ice-sound>
+            <div class="coach-card__media">
+              <svg viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet" aria-label="Фото тренера Марии Лебедевой">
+                <circle cx="50" cy="36" r="17" fill="#C7D2DC"/>
+                <path d="M22 98c0-19 13-32 28-32s28 13 28 32z" fill="#C7D2DC"/>
+              </svg>
+              <div class="coach-card__glow"></div>
+            </div>
+            <div class="coach-card__body">
+              <h3>Мария Лебедева</h3>
+              <div class="coach-card__role">Хореограф</div>
+              <p class="coach-card__rega">Балетная подготовка, постановка программ</p>
+            </div>
+          </a>
+
+          <a class="glass card-link coach-card reveal" data-delay="3" href="trainer.html" data-ice-sound>
+            <div class="coach-card__media">
+              <svg viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet" aria-label="Фото тренера Игоря Крылова">
+                <circle cx="50" cy="36" r="17" fill="#7f9bd4"/>
+                <path d="M22 98c0-19 13-32 28-32s28 13 28 32z" fill="#7f9bd4"/>
+              </svg>
+              <div class="coach-card__glow"></div>
+            </div>
+            <div class="coach-card__body">
+              <h3>Игорь Крылов</h3>
+              <div class="coach-card__role">Тренер · малыши</div>
+              <p class="coach-card__rega">Автор игровой методики для детей 3–5 лет</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== WHY US ===== -->
+    <section class="section">
+      <div class="container">
+        <p class="eyebrow reveal">Почему Angel Team</p>
+        <h2 class="display display--lg reveal" data-delay="1">Шесть причин доверить нам</h2>
+        <div class="grid-3 mt-3">
+          <article class="glass adv reveal" data-ice-sound><div class="adv__num">01</div><h3>Тренеры-чемпионы</h3><p>Мастера спорта и призёры всероссийских стартов, которые сами прошли путь от первого шага до пьедестала.</p></article>
+          <article class="glass adv reveal" data-delay="1" data-ice-sound><div class="adv__num">02</div><h3>Индивидуальный подход</h3><p>План под цели и уровень каждого. Никакого конвейера — только то, что нужно именно вашему ребёнку.</p></article>
+          <article class="glass adv reveal" data-delay="2" data-ice-sound><div class="adv__num">03</div><h3>Профессиональный лёд</h3><p>Современные арены в ТРЦ «Океанис» и «Рио» с качественной заливкой и комфортной инфраструктурой.</p></article>
+          <article class="glass adv reveal" data-ice-sound><div class="adv__num">04</div><h3>Малые группы</h3><p>До 10 человек на льду — тренер видит каждого и успевает дать обратную связь на каждом занятии.</p></article>
+          <article class="glass adv reveal" data-delay="1" data-ice-sound><div class="adv__num">05</div><h3>Безопасность</h3><p>Мягкая экипировка на первых этапах, страховка на прыжках и внимание к каждому движению.</p></article>
+          <article class="glass adv reveal" data-delay="2" data-ice-sound><div class="adv__num">06</div><h3>Путь к результату</h3><p>От первых шагов до разрядов и турниров. Прозрачная система уровней и понятная траектория роста.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PROGRAM FINDER (unique #2) ===== -->
+    <section class="section section--tight">
+      <div class="container">
+        <p class="eyebrow reveal">Подбор программы</p>
+        <h2 class="display display--lg reveal" data-delay="1">Не знаете, с чего начать?</h2>
+        <p class="lead reveal" data-delay="2">Ответьте на три вопроса — мы подберём подходящую программу за десять секунд.</p>
+
+        <div class="finder mt-3" data-finder>
+          <div class="finder__controls reveal">
+            <div class="field">
+              <label for="f-age">Возраст</label>
+              <div class="range">
+                <div class="range__head"><span>3</span><span class="range__value" data-age-val>8 лет</span></div>
+                <input type="range" id="f-age" data-age min="3" max="45" value="8" step="1" />
+              </div>
+            </div>
+
+            <div class="field">
+              <label>Опыт катания</label>
+              <div class="chips" role="group" aria-label="Опыт катания">
+                <button class="chip is-active" data-exp="none">С нуля</button>
+                <button class="chip" data-exp="some">Немного катаюсь</button>
+                <button class="chip" data-exp="sport">Занимался(ась) в секции</button>
+              </div>
+            </div>
+
+            <div class="field">
+              <label>Цель</label>
+              <div class="chips" role="group" aria-label="Цель занятий">
+                <button class="chip is-active" data-goal="skill">Освоить технику</button>
+                <button class="chip" data-goal="fun">Для удовольствия</button>
+                <button class="chip" data-goal="sport">Спортивная карьера</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="finder__result reveal" data-delay="1">
+            <div class="glass result-card" data-result></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== TESTIMONIALS ===== -->
+    <section class="section">
+      <div class="container">
+        <p class="eyebrow reveal">Отзывы</p>
+        <h2 class="display display--lg reveal" data-delay="1">Что говорят родители и ученики</h2>
+        <div class="testi-track mt-3">
+          <article class="glass testi reveal">
+            <div class="testi__stars" aria-label="5 из 5">★★★★★</div>
+            <p class="testi__text">«Дочь пришла неуверенной в себе, а через год вышла на первые соревнования. Тренеры видят в детях больше, чем они сами в себе видят.»</p>
+            <div class="testi__who"><span class="testi__ava" aria-hidden="true">ЕК</span><div><div class="testi__name">Екатерина</div><div class="testi__role">мама ученицы, 8 лет</div></div></div>
+          </article>
+          <article class="glass testi reveal" data-delay="1">
+            <div class="testi__stars" aria-label="5 из 5">★★★★★</div>
+            <p class="testi__text">«Начала кататься в 34 года с нуля. Боялась, что неловко. Здесь никто не осуждает — только поддерживают и празднуют каждый прогресс.»</p>
+            <div class="testi__who"><span class="testi__ava" aria-hidden="true">АМ</span><div><div class="testi__name">Алина</div><div class="testi__role">взрослый любитель</div></div></div>
+          </article>
+          <article class="glass testi reveal" data-delay="2">
+            <div class="testi__stars" aria-label="5 из 5">★★★★★</div>
+            <p class="testi__text">«Сын занимается третий год и уже сдал юношеский разряд. Дисциплина, которую он получил на льду, перенеслась и в школу.»</p>
+            <div class="testi__who"><span class="testi__ava" aria-hidden="true">СР</span><div><div class="testi__name">Сергей</div><div class="testi__role">отец ученика, 11 лет</div></div></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== LOCATIONS ===== -->
+    <section class="section section--tight">
+      <div class="container">
+        <p class="eyebrow reveal">Локации</p>
+        <h2 class="display display--lg reveal" data-delay="1">Две арены в городе</h2>
+        <div class="loc mt-3">
+          <div class="loc__map reveal" role="img" aria-label="Схема расположения арен Angel Team в Нижнем Новгороде">
+            <span class="loc__pin" style="left:32%; top:38%" data-label="ТРЦ «Океанис»"></span>
+            <span class="loc__pin" style="left:74%; top:62%" data-label="ТРЦ «Рио»"></span>
+          </div>
+          <div class="loc__list reveal" data-delay="1">
+            <article class="glass loc-card" data-ice-sound>
+              <h3>ТРЦ «Океанис»</h3>
+              <p><span class="ico" aria-hidden="true">📍</span> просп. Гагарина, 35</p>
+              <p><span class="ico" aria-hidden="true">🕐</span> Ежедневно 08:00–22:00</p>
+              <p><span class="ico" aria-hidden="true">🏒</span> Профессиональный лёд, прокат коньков, раздевалки</p>
+            </article>
+            <article class="glass loc-card" data-ice-sound>
+              <h3>ТРЦ «Рио»</h3>
+              <p><span class="ico" aria-hidden="true">📍</span> Московское ш., 12</p>
+              <p><span class="ico" aria-hidden="true">🕐</span> Ежедневно 08:00–22:00</p>
+              <p><span class="ico" aria-hidden="true">🏒</span> Каток-трансформер, залы ОФП, парковка</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CTA FORM ===== -->
+    <section class="section" id="trial">
+      <div class="container">
+        <div class="glass cta-band">
+          <p class="eyebrow">Пробное занятие</p>
+          <h2 class="display display--md">Сделайте первый шаг на лёд</h2>
+          <p class="lead mx-auto">Оставьте заявку — администратор подберёт удобное время и ответит на вопросы. Первое занятие со скидкой 50%.</p>
+
+          <form class="form-grid mt-3" style="text-align:left" data-validate novalidate>
+            <div class="field">
+              <label for="c-name">Имя</label>
+              <input id="c-name" name="name" type="text" placeholder="Как к вам обращаться" required />
+              <span class="error">Укажите имя</span>
+            </div>
+            <div class="field">
+              <label for="c-phone">Телефон</label>
+              <input id="c-phone" name="phone" type="tel" placeholder="+7 (___) ___-__-__" required />
+              <span class="error">Укажите телефон</span>
+            </div>
+            <div class="field">
+              <label for="c-age">Возраст ученика</label>
+              <select id="c-age" name="age" required>
+                <option value="">Выберите…</option>
+                <option>3–5 лет</option>
+                <option>6–12 лет</option>
+                <option>13–17 лет</option>
+                <option>18+ (взрослый)</option>
+              </select>
+              <span class="error">Выберите возраст</span>
+            </div>
+            <div class="field">
+              <label for="c-program">Программа</label>
+              <select id="c-program" name="program" required>
+                <option value="">Выберите…</option>
+                <option>Малыши 3–5 лет</option>
+                <option>Юниоры 6–12 лет</option>
+                <option>Спортивные группы</option>
+                <option>Взрослые с нуля</option>
+                <option>Взрослые-любители</option>
+                <option>Индивидуальные тренировки</option>
+              </select>
+              <span class="error">Выберите программу</span>
+            </div>
+            <div class="field full">
+              <label for="c-msg">Комментарий</label>
+              <textarea id="c-msg" name="message" rows="3" placeholder="Опыт катания, удобное время, вопросы…"></textarea>
+            </div>
+            <div class="field full">
+              <label class="flex items-center gap-2" style="font-size:0.85rem; letter-spacing:0; text-transform:none; cursor:pointer">
+                <input type="checkbox" data-consent style="width:auto" /> Согласен(на) на обработку персональных данных
+              </label>
+              <span class="error">Необходимо согласие</span>
+            </div>
+            <div class="full">
+              <button class="btn btn-primary btn-lg" type="submit">Записаться на пробное занятие</button>
+              <div class="form-status" role="status" aria-live="polite"></div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <a class="logo" href="index.html" aria-label="Angel Team — на главную">
+            <svg class="logo__mark" viewBox="0 0 100 100" fill="none" aria-hidden="true">
+              <g class="flake" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M50 4v92"/><path d="M11 27.5l78 45"/><path d="M11 72.5l78-45"/>
+                <path d="M50 20l-9 8M50 20l9 8"/><path d="M50 80l-9-8M50 80l9-8"/>
+                <circle cx="50" cy="50" r="3" fill="currentColor" stroke="none"/>
+              </g>
+            </svg>
+            <span class="logo__word">Angel Team<span class="logo__sub">школа фигурного катания</span></span>
+          </a>
+          <p class="mt-2" style="color:var(--txt-faint); font-size:0.9rem; max-width:32ch">Академия фигурного катания для детей и взрослых. Твой лёд. Твоя история.</p>
+          <div class="footer__social">
+            <a class="icon-btn" href="https://t.me/angelteam_nn" target="_blank" rel="noopener" aria-label="Telegram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21.5 3.5 2.8 10.8c-.9.35-.85 1.6.05 1.9l4.6 1.5 1.7 5.3c.25.8 1.3.95 1.8.3l2.5-3 4.6 3.4c.7.5 1.7.1 1.9-.75l2.6-14.5c.2-1-.6-1.8-1.55-1.45z"/><path d="m7.5 14.2 8.6-6.4"/></svg>
+            </a>
+            <a class="icon-btn" href="https://vk.com/angelteam_nn" target="_blank" rel="noopener" aria-label="ВКонтакте">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.7 18.5c-6.4 0-10.1-4.4-10.3-11.7h3.2c.15 5.4 2.5 7.7 4.4 8.1V6.8h3v4.6c1.9-.2 3.8-2.3 4.5-4.6h3c-.5 2.9-2.6 5-4.1 5.9 1.5.7 3.9 2.6 4.8 5.8h-3.3c-.7-2.2-2.5-3.9-4.9-4.1v4.1h-.3z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <nav aria-label="Навигация в подвале">
+          <h4>Навигация</h4>
+          <ul>
+            <li><a href="programs.html">Программы</a></li>
+            <li><a href="trainers.html">Тренеры</a></li>
+            <li><a href="schedule.html">Расписание</a></li>
+            <li><a href="parents.html">Родителям</a></li>
+            <li><a href="about.html">О школе</a></li>
+            <li><a href="blog.html">Блог</a></li>
+          </ul>
+          <button class="nav__theme" data-theme-toggle aria-label="Переключить тему" aria-pressed="false">
+          <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.6 4.6l1.8 1.8M17.6 17.6l1.8 1.8M4.6 19.4l1.8-1.8M17.6 6.4l1.8-1.8"/></svg>
+          <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg>
+          <span>Тема</span>
+        </button>
+      </nav>
+
+        <div>
+          <h4>Контакты</h4>
+          <ul>
+            <li><a href="tel:+78310000000">+7 (831) 000-00-00</a></li>
+            <li><a href="mailto:hello@angelteam-nn.ru">hello@angelteam-nn.ru</a></li>
+            <li><span>ТРЦ «Океанис», просп. Гагарина, 35</span></li>
+            <li><span>ТРЦ «Рио», Московское ш., 12</span></li>
+            <li><span>Ежедневно 08:00–22:00</span></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Клиентам</h4>
+          <ul>
+            <li><a href="corporate.html">Корпоративным клиентам</a></li>
+            <li><a href="parents.html#docs">Документы и справки</a></li>
+            <li><a href="parents.html#equip">Экипировка</a></li>
+            <li><a href="contacts.html">Связаться с нами</a></li>
+            <li><a href="admin.html">Вход для персонала</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <span>© 2025 Angel Team. Все права защищены.</span>
+        <span>Нижний Новгород · Твой лёд. Твоя история.</span>
+      </div>
+    </div>
+  </footer>
+
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

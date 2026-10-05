@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Тренер — Angel Team · Школа фигурного катания</title>
+  <meta name="description" content="Биография, регалии, специализация и философия тренера школы фигурного катания Angel Team." />
+  <link rel="canonical" href="https://angelteam-nn.ru/trainer.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;700;800&family=Manrope:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@1,400;1,500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Перейти к содержимому</a>
+  <canvas id="snow" aria-hidden="true"></canvas>
+
+  <header class="nav" data-nav>
+    <div class="container nav__inner">
+      <a class="logo" href="index.html" aria-label="Angel Team — на главную">
+        <svg class="logo__mark" viewBox="0 0 100 100" fill="none" aria-hidden="true"><g class="flake" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M50 4v92"/><path d="M11 27.5l78 45"/><path d="M11 72.5l78-45"/><circle cx="50" cy="50" r="3" fill="currentColor" stroke="none"/></g></svg>
+        <span class="logo__word">Angel Team</span>
+      </a>
+      <nav class="nav__menu" id="menu" aria-label="Основная навигация">
+        <a class="nav__link" href="programs.html">Программы</a>
+        <a class="nav__link is-active" href="trainers.html">Тренеры</a>
+        <a class="nav__link" href="schedule.html">Расписание</a>
+        <a class="nav__link" href="parents.html">Родителям</a>
+        <a class="nav__link" href="about.html">О школе</a>
+        <a class="nav__link" href="blog.html">Блог</a>
+        <a class="nav__link" href="contacts.html">Контакты</a>
+        <button class="nav__theme" data-theme-toggle aria-label="Переключить тему" aria-pressed="false">
+          <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.6 4.6l1.8 1.8M17.6 17.6l1.8 1.8M4.6 19.4l1.8-1.8M17.6 6.4l1.8-1.8"/></svg>
+          <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg>
+          <span>Тема</span>
+        </button>
+      </nav>
+      <div class="nav__actions">
+        <button class="icon-btn theme-toggle" data-theme-toggle aria-label="Переключить тему" aria-pressed="false">
+          <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.6 4.6l1.8 1.8M17.6 17.6l1.8 1.8M4.6 19.4l1.8-1.8M17.6 6.4l1.8-1.8"/></svg>
+          <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg>
+        </button>
+        <a class="btn btn-primary btn-sm nav__cta" href="contacts.html#form">Записаться</a>
+        <button class="burger nav__burger" aria-label="Открыть меню" aria-expanded="false" aria-controls="menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="section">
+      <div class="container">
+        <nav class="crumb" aria-label="Хлебные крошки"><a href="index.html">Главная</a> / <a href="trainers.html">Тренеры</a> / <span data-t-name></span></nav>
+        <div class="grid-2 mt-2" style="grid-template-columns: 0.9fr 1.1fr; align-items:start">
+          <div class="reveal">
+            <div class="coach-card__media" style="border-radius:var(--r-lg); overflow:hidden; aspect-ratio:3/4; border:1px solid var(--border-glass)">
+              <svg viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet" data-t-photo aria-label="Фото тренера"><circle cx="50" cy="36" r="17" fill="#A8B8E8"/><path d="M22 98c0-19 13-32 28-32s28 13 28 32z" fill="#A8B8E8"/></svg>
+              <div class="coach-card__glow" style="opacity:1"></div>
+            </div>
+          </div>
+          <div>
+            <p class="eyebrow reveal" data-t-role></p>
+            <h1 class="display display--lg reveal" data-delay="1" data-t-name></h1>
+            <p class="quote reveal" data-delay="2" data-t-philosophy></p>
+            <div class="meta-list mt-3 reveal" data-delay="3">
+              <li><span class="k">Специализация</span><span data-t-special></span></li>
+              <li><span class="k">Регалии</span><span data-t-rega></span></li>
+              <li><span class="k">Опыт</span><span data-t-exp></span></li>
+            </div>
+            <a class="btn btn-primary mt-3 reveal" data-delay="4" href="contacts.html#form">Записаться к тренеру</a>
+          </div>
+        </div>
+
+        <h2 class="display display--md mt-5 reveal">Расписание тренера</h2>
+        <div class="schedule-wrap mt-2 reveal">
+          <table class="schedule">
+            <thead><tr><th>День</th><th>Время</th><th>Программа</th><th>Арена</th></tr></thead>
+            <tbody data-t-schedule></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <a class="logo" href="index.html" aria-label="Angel Team — на главную">
+            <svg class="logo__mark" viewBox="0 0 100 100" fill="none" aria-hidden="true"><g class="flake" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M50 4v92"/><path d="M11 27.5l78 45"/><path d="M11 72.5l78-45"/><circle cx="50" cy="50" r="3" fill="currentColor" stroke="none"/></g></svg>
+            <span class="logo__word">Angel Team</span>
+          </a>
+          <p class="mt-2" style="color:var(--txt-faint); font-size:0.9rem">Академия фигурного катания для детей и взрослых.</p>
+        </div>
+        <nav aria-label="Навигация в подвале">
+          <h4>Навигация</h4>
+          <ul>
+            <li><a href="programs.html">Программы</a></li>
+            <li><a href="trainers.html">Тренеры</a></li>
+            <li><a href="schedule.html">Расписание</a></li>
+            <li><a href="about.html">О школе</a></li>
+          </ul>
+          <button class="nav__theme" data-theme-toggle aria-label="Переключить тему" aria-pressed="false">
+          <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.6 4.6l1.8 1.8M17.6 17.6l1.8 1.8M4.6 19.4l1.8-1.8M17.6 6.4l1.8-1.8"/></svg>
+          <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg>
+          <span>Тема</span>
+        </button>
+      </nav>
+        <div>
+          <h4>Контакты</h4>
+          <ul>
+            <li><a href="tel:+78310000000">+7 (831) 000-00-00</a></li>
+            <li><a href="mailto:hello@angelteam-nn.ru">hello@angelteam-nn.ru</a></li>
+            <li><span>ТРЦ «Океанис» и ТРЦ «Рио»</span></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Клиентам</h4>
+          <ul>
+            <li><a href="corporate.html">Корпоративным клиентам</a></li>
+            <li><a href="parents.html#docs">Документы</a></li>
+            <li><a href="contacts.html">Связаться с нами</a></li>
+            <li><a href="admin.html">Вход для персонала</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom"><span>© 2025 Angel Team</span><span>Нижний Новгород · Твой лёд. Твоя история.</span></div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+  <script>
+    (function () {
+      "use strict";
+      var T = {
+        volkova: { name: "Анна Волкова", role: "Старший тренер · МС", color: "#A8B8E8",
+          philosophy: "«Лёд не прощает лени, но щедро вознаграждает за труд. Я учу не просто кататься — я учу добиваться.»",
+          special: "Юниоры, спортивные группы, взрослые с нуля", rega: "МС, чемпионка России среди юниоров, призёр этапов Гран-при", exp: "12 лет тренерской практики",
+          schedule: [["Пн / Ср", "17:00–19:00", "Юниоры", "Океанис"], ["Вт / Чт", "19:00–21:00", "Взрослые", "Рио"], ["Сб", "10:00–13:00", "Спортивные группы", "Океанис"]] },
+        sokolov: { name: "Дмитрий Соколов", role: "Тренер · КМС", color: "#00E5FF",
+          philosophy: "«Прыжок — это физика и смелость. Я учу обоим: считать обороты и не бояться высоты.»",
+          special: "Прыжковая техника, спортивные группы", rega: "КМС, призёр первенства ПФО, сертификат ISU", exp: "8 лет тренерской практики",
+          schedule: [["Пн / Ср / Пт", "16:00–18:00", "Спортивные группы", "Океанис"], ["Вт / Чт", "20:00–21:00", "Взрослые-любители", "Рио"]] },
+        lebedeva: { name: "Мария Лебедева", role: "Хореограф", color: "#C7D2DC",
+          philosophy: "«Техника выигрывает баллы, а выразительность — сердца. Красоту нельзя поставить за одну тренировку.»",
+          special: "Хореография, постановка программ, балет", rega: "Выпускница академии балета, 10 лет постановок для фигуристов", exp: "10 лет работы с фигуристами",
+          schedule: [["Ср", "19:00–20:00", "Хореография", "Рио"], ["Сб", "10:00–12:00", "Постановка программ", "Океанис"]] },
+        krylov: { name: "Игорь Крылов", role: "Тренер · малыши", color: "#7f9bd4",
+          philosophy: "«В три года главное — не техника, а желание вернуться на лёд. Всё остальное приложится.»",
+          special: "Малыши 3–5 лет, игровая методика", rega: "Педагог-психолог, автор игровой методики обучения", exp: "9 лет работы с детьми",
+          schedule: [["Пн / Ср", "17:00–17:45", "Малыши", "Океанис"], ["Сб", "10:00–10:45", "Малыши", "Рио"]] },
+        orlova: { name: "Вера Орлова", role: "Тренер · ОФП", color: "#9fc4e8",
+          philosophy: "«Сильный корпус — это стабильные прыжки и безопасные падения. База решает всё.»",
+          special: "ОФП, растяжка, функциональная подготовка", rega: "Мастер спорта по лёгкой атлетике, дипломированный фитнес-тренер", exp: "7 лет в спорте",
+          schedule: [["Вт / Чт", "18:00–19:00", "ОФП", "Рио"], ["Сб", "09:00–10:00", "ОФП", "Океанис"]] },
+        romanov: { name: "Павел Романов", role: "Тренер · взрослые", color: "#8ad0e0",
+          philosophy: "«Начать во взрослом возрасте — смелость. Моя задача — чтобы первый шаг не стал последним.»",
+          special: "Взрослые с нуля и любители", rega: "КМС, призёр городских соревнований, 6 лет с взрослыми группами", exp: "6 лет тренерской практики",
+          schedule: [["Пн / Ср", "20:00–21:00", "Взрослые с нуля", "Рио"], ["Вс", "11:00–12:00", "Взрослые-любители", "Океанис"]] }
+      };
+      var slug = new URLSearchParams(location.search).get("t") || "volkova";
+      var d = T[slug] || T.volkova;
+
+      function setAll(attr, val) { document.querySelectorAll("[data-" + attr + "]").forEach(function (el) { el.textContent = val; }); }
+      setAll("t-name", d.name);
+      setAll("t-role", d.role);
+      setAll("t-philosophy", d.philosophy);
+      setAll("t-special", d.special);
+      setAll("t-rega", d.rega);
+      setAll("t-exp", d.exp);
+
+      var photo = document.querySelector("[data-t-photo]");
+      if (photo) { photo.querySelector("circle").setAttribute("fill", d.color); photo.querySelectorAll("path").forEach(function (p) { p.setAttribute("fill", d.color); }); }
+
+      var tbody = document.querySelector("[data-t-schedule]");
+      if (tbody) tbody.innerHTML = d.schedule.map(function (r) {
+        return "<tr><td>" + r[0] + "</td><td>" + r[1] + "</td><td>" + r[2] + "</td><td>" + r[3] + "</td></tr>";
+      }).join("");
+
+      document.title = d.name + " — тренер Angel Team";
+    })();
+  </script>
+</body>
+</html>

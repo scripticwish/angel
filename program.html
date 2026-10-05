@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Программа — Angel Team · Фигурное катание</title>
+  <meta name="description" content="Подробная информация о программе обучения в школе фигурного катания Angel Team: для кого, что даёт, структура занятий, расписание, стоимость, тренер, FAQ." />
+  <link rel="canonical" href="https://angelteam-nn.ru/program.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;700;800&family=Manrope:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@1,400;1,500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Перейти к содержимому</a>
+  <canvas id="snow" aria-hidden="true"></canvas>
+
+  <header class="nav" data-nav>
+    <div class="container nav__inner">
+      <a class="logo" href="index.html" aria-label="Angel Team — на главную">
+        <svg class="logo__mark" viewBox="0 0 100 100" fill="none" aria-hidden="true"><g class="flake" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M50 4v92"/><path d="M11 27.5l78 45"/><path d="M11 72.5l78-45"/><circle cx="50" cy="50" r="3" fill="currentColor" stroke="none"/></g></svg>
+        <span class="logo__word">Angel Team</span>
+      </a>
+      <nav class="nav__menu" id="menu" aria-label="Основная навигация">
+        <a class="nav__link is-active" href="programs.html">Программы</a>
+        <a class="nav__link" href="trainers.html">Тренеры</a>
+        <a class="nav__link" href="schedule.html">Расписание</a>
+        <a class="nav__link" href="parents.html">Родителям</a>
+        <a class="nav__link" href="about.html">О школе</a>
+        <a class="nav__link" href="blog.html">Блог</a>
+        <a class="nav__link" href="contacts.html">Контакты</a>
+        <button class="nav__theme" data-theme-toggle aria-label="Переключить тему" aria-pressed="false">
+          <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.6 4.6l1.8 1.8M17.6 17.6l1.8 1.8M4.6 19.4l1.8-1.8M17.6 6.4l1.8-1.8"/></svg>
+          <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg>
+          <span>Тема</span>
+        </button>
+      </nav>
+      <div class="nav__actions">
+        <button class="icon-btn theme-toggle" data-theme-toggle aria-label="Переключить тему" aria-pressed="false">
+          <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.6 4.6l1.8 1.8M17.6 17.6l1.8 1.8M4.6 19.4l1.8-1.8M17.6 6.4l1.8-1.8"/></svg>
+          <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg>
+        </button>
+        <a class="btn btn-primary btn-sm nav__cta" href="contacts.html#form">Записаться</a>
+        <button class="burger nav__burger" aria-label="Открыть меню" aria-expanded="false" aria-controls="menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="page-hero__bg" aria-hidden="true"></div>
+      <div class="container">
+        <nav class="crumb" aria-label="Хлебные крошки"><a href="index.html">Главная</a> / <a href="programs.html">Программы</a> / <span data-p-name></span></nav>
+        <p class="eyebrow reveal" data-p-tag></p>
+        <h1 class="display display--xl reveal" data-delay="1" data-p-name></h1>
+        <p class="lead reveal" data-delay="2" data-p-hero></p>
+      </div>
+    </section>
+
+    <section class="section section--tight">
+      <div class="container">
+        <div class="grid-2">
+          <div class="glass feature reveal">
+            <h3>Для кого</h3>
+            <p data-p-audience></p>
+          </div>
+          <div class="glass feature reveal" data-delay="1">
+            <h3>Что даёт программа</h3>
+            <ul class="meta-list" data-p-benefits></ul>
+          </div>
+        </div>
+
+        <div class="grid-2 mt-3">
+          <div class="glass feature reveal">
+            <h3>Как проходят занятия</h3>
+            <ul class="meta-list" data-p-structure></ul>
+          </div>
+          <div class="glass feature reveal" data-delay="1">
+            <h3>Расписание и стоимость</h3>
+            <div class="schedule-wrap">
+              <table class="schedule">
+                <thead><tr><th>День</th><th>Время</th><th>Арена</th></tr></thead>
+                <tbody data-p-schedule></tbody>
+              </table>
+            </div>
+            <div class="mt-3 flex items-center justify-between flex-wrap gap-2">
+              <span style="font-family:var(--font-display); font-size:0.8rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--txt-muted)">Стоимость</span>
+              <span class="stat__num" data-p-price style="font-size:1.6rem"></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="glass feature mt-3 reveal">
+          <h3>Тренер программы</h3>
+          <div class="flex items-center gap-3 flex-wrap">
+            <span class="testi__ava" data-p-trainer-initial style="width:56px;height:56px;font-size:1.1rem" aria-hidden="true"></span>
+            <div>
+              <div class="testi__name" data-p-trainer></div>
+              <div class="testi__role" data-p-trainer-role></div>
+            </div>
+            <a class="btn btn-ghost btn-sm" href="trainers.html" style="margin-left:auto">Все тренеры</a>
+          </div>
+        </div>
+
+        <h2 class="display display--md mt-5 reveal">Частые вопросы</h2>
+        <div class="accordion mt-2" data-p-faq></div>
+      </div>
+    </section>
+
+    <section class="section section--tight">
+      <div class="container">
+        <div class="glass cta-band">
+          <p class="eyebrow">Запись открыта</p>
+          <h2 class="display display--md">Присоединяйтесь к программе</h2>
+          <p class="lead mx-auto">Оставьте заявку — администратор подберёт группу и удобное время, ответит на вопросы.</p>
+          <a class="btn btn-primary btn-lg mt-2" href="contacts.html#form" style="position:relative;z-index:1">Записаться</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <a class="logo" href="index.html" aria-label="Angel Team — на главную">
+            <svg class="logo__mark" viewBox="0 0 100 100" fill="none" aria-hidden="true"><g class="flake" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M50 4v92"/><path d="M11 27.5l78 45"/><path d="M11 72.5l78-45"/><circle cx="50" cy="50" r="3" fill="currentColor" stroke="none"/></g></svg>
+            <span class="logo__word">Angel Team</span>
+          </a>
+          <p class="mt-2" style="color:var(--txt-faint); font-size:0.9rem">Академия фигурного катания для детей и взрослых.</p>
+        </div>
+        <nav aria-label="Навигация в подвале">
+          <h4>Навигация</h4>
+          <ul>
+            <li><a href="programs.html">Программы</a></li>
+            <li><a href="trainers.html">Тренеры</a></li>
+            <li><a href="schedule.html">Расписание</a></li>
+            <li><a href="about.html">О школе</a></li>
+          </ul>
+          <button class="nav__theme" data-theme-toggle aria-label="Переключить тему" aria-pressed="false">
+          <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.6 4.6l1.8 1.8M17.6 17.6l1.8 1.8M4.6 19.4l1.8-1.8M17.6 6.4l1.8-1.8"/></svg>
+          <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg>
+          <span>Тема</span>
+        </button>
+      </nav>
+        <div>
+          <h4>Контакты</h4>
+          <ul>
+            <li><a href="tel:+78310000000">+7 (831) 000-00-00</a></li>
+            <li><a href="mailto:hello@angelteam-nn.ru">hello@angelteam-nn.ru</a></li>
+            <li><span>ТРЦ «Океанис» и ТРЦ «Рио»</span></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Клиентам</h4>
+          <ul>
+            <li><a href="corporate.html">Корпоративным клиентам</a></li>
+            <li><a href="parents.html#docs">Документы</a></li>
+            <li><a href="contacts.html">Связаться с нами</a></li>
+            <li><a href="admin.html">Вход для персонала</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom"><span>© 2025 Angel Team</span><span>Нижний Новгород · Твой лёд. Твоя история.</span></div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+  <script>
+    (function () {
+      "use strict";
+      var PROGRAMS = {
+        toddlers: {
+          tag: "3–5 лет", name: "Малыши",
+          hero: "Знакомство со льдом через игру. Дети учатся держать равновесие, скользить и не бояться — в малых группах с ассистентом на льду.",
+          audience: "Дети 3–5 лет без опыта катания. Занятия построены на игровых сюжетах, поэтому подходят даже самым маленьким и осторожным.",
+          benefits: ["Уверенное равновесие на коньках", "Правильная стойка и первые шаги", "Самостоятельное скольжение", "Развитие координации и осанки"],
+          structure: ["Разминка-игра (10 мин)", "Работа на льду с тренером (30 мин)", "Свободное катание с заданиями (10 мин)", "Заминка и растяжка (5 мин)"],
+          schedule: [["Пн / Ср", "17:00–17:45", "Океанис"], ["Сб", "10:00–10:45", "Рио"]],
+          price: "4 200 ₽ / мес",
+          trainer: "Игорь Крылов", trainerRole: "Тренер · малыши", trainerInitial: "ИК",
+          faq: [
+            { q: "Нужно ли уметь кататься?", a: "Нет, программа рассчитана на полный ноль. Мы начинаем с азов — как стоять и падать правильно." },
+            { q: "Что взять на первое занятие?", a: "Тёплую одежду, перчатки и хорошее настроение. Коньки и шлем выдаём на месте." }
+          ]
+        },
+        juniors: {
+          tag: "6–12 лет", name: "Юниоры",
+          hero: "Системная техническая база, с которой начинается настоящий спорт. Скольжение, вращения и первые прыжки под контролем тренера.",
+          audience: "Дети 6–12 лет, которые хотят кататься уверенно и красиво, а при желании — перейти в спортивную группу.",
+          benefits: ["Техника скольжения вперёд и назад", "Базовые вращения", "Первые прыжки (тулуп, сальхов)", "Хореография и выразительность"],
+          structure: ["ОФП-разминка (10 мин)", "Скольжение и дорожки (20 мин)", "Вращения и прыжки (20 мин)", "Постановка элементов (10 мин)"],
+          schedule: [["Вт / Чт", "17:00–18:00", "Океанис"], ["Сб", "11:00–12:00", "Океанис"]],
+          price: "5 500 ₽ / мес",
+          trainer: "Анна Волкова", trainerRole: "Старший тренер · МС", trainerInitial: "АВ",
+          faq: [
+            { q: "Можно ли перейти в спортивную группу?", a: "Да, перевод происходит по рекомендации тренера, когда ребёнок готов по технике и мотивации." },
+            { q: "Сколько занятий в неделю?", a: "2–3 занятия в неделю. Для желающих больше — дополнительные слоты и индивидуальные тренировки." }
+          ]
+        },
+        sports: {
+          tag: "6–17 лет", name: "Спортивные группы",
+          hero: "Подготовка к разрядам и соревнованиям. Индивидуальный план, отработка контента и сопровождение на стартах.",
+          audience: "Дети и подростки с базовой подготовкой, нацеленные на соревновательную карьеру и выполнение разрядов.",
+          benefits: ["Выполнение юношеских и III–II разрядов", "Отработка прыжков до лутца и акселя", "Соревновательные программы", "ОФП, хореография, психология старта"],
+          structure: ["Интенсивная разминка (15 мин)", "Прыжковый блок (25 мин)", "Вращения и дорожки (15 мин)", "Прогон программ (15 мин)"],
+          schedule: [["Пн / Ср / Пт", "16:00–18:00", "Океанис"], ["Сб", "09:00–11:00", "Океанис"]],
+          price: "8 000 ₽ / мес",
+          trainer: "Дмитрий Соколов", trainerRole: "Тренер · КМС", trainerInitial: "ДС",
+          faq: [
+            { q: "Как проходит отбор?", a: "Проводим просмотровое занятие: тренер оценивает технику, физику и мотивацию, затем даёт рекомендацию." },
+            { q: "Участвуете ли в соревнованиях?", a: "Да, выезжаем на городские и областные старты, а также внутренние турниры Angel Team." }
+          ]
+        },
+        "adult-beginner": {
+          tag: "18+", name: "Взрослые с нуля",
+          hero: "Мягкий старт для взрослых: равновесие, скольжение и уверенность на льду — без давления и спешки.",
+          audience: "Взрослые без опыта катания, которые хотят научиться уверенно стоять и скользить на коньках.",
+          benefits: ["Уверенное скольжение", "Правильное падение и торможение", "Осанка и равновесие", "Комфортная атмосфера без осуждения"],
+          structure: ["Разминка (10 мин)", "Базовое скольжение (25 мин)", "Элементы по уровню (20 мин)", "Заминка (5 мин)"],
+          schedule: [["Пн / Ср", "20:00–21:00", "Рио"], ["Сб", "12:00–13:00", "Рио"]],
+          price: "4 800 ₽ / мес",
+          trainer: "Анна Волкова", trainerRole: "Старший тренер · МС", trainerInitial: "АВ",
+          faq: [
+            { q: "Мне 30+, не поздно?", a: "Никогда не поздно. У нас занимаются ученики от 18 до 60+. Начинать можно в любом возрасте." },
+            { q: "Нужна ли своя экипировка?", a: "На первых занятиях можно взять коньки в прокате. Шлем не обязателен, но рекомендуем." }
+          ]
+        },
+        "adult-amateur": {
+          tag: "18+", name: "Взрослые-любители",
+          hero: "Для тех, кто уже катается и хочет большего: техника, вращения и первые прыжки в компании единомышленников.",
+          audience: "Взрослые с базовым уровнем катания, которые хотят освоить техничные элементы и красиво двигаться на льду.",
+          benefits: ["Чистые рёбра и дуги", "Вращения на двух ногах", "Первые прыжки", "Комьюнити любителей и выезды"],
+          structure: ["Разминка (10 мин)", "Техника скольжения (20 мин)", "Вращения и прыжки (25 мин)", "Свободное катание (5 мин)"],
+          schedule: [["Вт / Чт", "20:00–21:00", "Рио"], ["Вс", "11:00–12:00", "Океанис"]],
+          price: "5 200 ₽ / мес",
+          trainer: "Дмитрий Соколов", trainerRole: "Тренер · КМС", trainerInitial: "ДС",
+          faq: [
+            { q: "Какой уровень нужен?", a: "Достаточно уверенно скользить вперёд и назад и выполнять базовое торможение." },
+            { q: "Есть ли выезды на открытый лёд?", a: "Да, организуем любительские прокаты и выезды на открытые катки зимой." }
+          ]
+        },
+        individual: {
+          tag: "1-на-1", name: "Индивидуальные тренировки",
+          hero: "Максимум внимания тренера и программа, собранная под конкретную цель — от первого шага до сложного прыжка.",
+          audience: "Любой уровень и возраст. Идеально для быстрого прогресса, отработки конкретного элемента или гибкого графика.",
+          benefits: ["Персональный план тренировок", "Быстрый прогресс", "Гибкое расписание", "Разбор техники в деталях"],
+          structure: ["Индивидуальная разминка", "Отработка целевых элементов", "Обратная связь и корректировка", "План самостоятельной работы"],
+          schedule: [["По записи", "08:00–22:00", "Океанис / Рио"]],
+          price: "от 2 500 ₽ / занятие",
+          trainer: "Тренер под цель", trainerRole: "Подбираем специалиста", trainerInitial: "AT",
+          faq: [
+            { q: "Сколько длится занятие?", a: "45–60 минут в зависимости от уровня и целей. Возможны сдвоенные слоты." },
+            { q: "Как выбрать тренера?", a: "На пробном занятии подберём специалиста под вашу задачу: прыжки, скольжение или хореографию." }
+          ]
+        },
+        choreo: {
+          tag: "офф-айс", name: "Хореография и ОФП",
+          hero: "Красота движения рождается в зале. Осанка, выразительность и физическая подготовка — то, что делает катание по-настоящему красивым.",
+          audience: "Фигуристы любого уровня, которым нужна балетная постановка, растяжка и общая физическая подготовка.",
+          benefits: ["Осанка и пластика", "Растяжка и гибкость", "Сила и выносливость", "Постановка соревновательных программ"],
+          structure: ["Балетный станок (15 мин)", "Растяжка (15 мин)", "ОФП / прыжковая имитация (20 мин)", "Постановка (10 мин)"],
+          schedule: [["Ср", "19:00–20:00", "Рио"], ["Сб", "10:00–11:00", "Океанис"]],
+          price: "3 500 ₽ / мес",
+          trainer: "Мария Лебедева", trainerRole: "Хореограф", trainerInitial: "МЛ",
+          faq: [
+            { q: "Можно ли посещать только хореографию?", a: "Да, программа доступна отдельно от ледовых занятий — и как дополнение, и самостоятельно." },
+            { q: "Нужна ли балетная подготовка?", a: "Нет, начинаем с базовых позиций и постепенно усложняем." }
+          ]
+        },
+        "summer-camp": {
+          tag: "каникулы", name: "Летние сборы",
+          hero: "Интенсивные смены в каникулы: лёд, ОФП, хореография и мастер-классы. Максимум прогресса за короткий срок.",
+          audience: "Дети 6–17 лет любого уровня. Идеально, чтобы не терять форму летом или сделать рывок перед сезоном.",
+          benefits: ["Ежедневные ледовые тренировки", "ОФП и хореография", "Мастер-классы от чемпионов", "Смена окружения и мотивация"],
+          structure: ["Утренний лёд (60 мин)", "ОФП и растяжка (45 мин)", "Хореография (45 мин)", "Вечерний лёд (60 мин)"],
+          schedule: [["Июнь–август", "10:00–17:00", "Океанис"]],
+          price: "от 18 000 ₽ / смена",
+          trainer: "Команда Angel Team", trainerRole: "Полный тренерский штаб", trainerInitial: "AT",
+          faq: [
+            { q: "Сколько длится смена?", a: "Две недели, с понедельника по пятницу. Возможно пребывание на полдня или весь день." },
+            { q: "Есть ли питание?", a: "Да, при полнодневном пребывании — обед и перекусы. Меню согласовано с родителями." }
+          ]
+        }
+      };
+
+      var slug = new URLSearchParams(location.search).get("p") || "toddlers";
+      var d = PROGRAMS[slug] || PROGRAMS.toddlers;
+
+      function set(sel, val) { var el = document.querySelector(sel); if (el) el.textContent = val; }
+      function setAll(attr, val) {
+        document.querySelectorAll("[data-" + attr + "]").forEach(function (el) { el.textContent = val; });
+      }
+
+      setAll("p-name", d.name);
+      setAll("p-tag", d.tag);
+      setAll("p-hero", d.hero);
+      setAll("p-audience", d.audience);
+      setAll("p-price", d.price);
+      set("data-p-trainer", d.trainer);
+      set("data-p-trainer-role", d.trainerRole);
+      set("data-p-trainer-initial", d.trainerInitial);
+
+      function list(items, cls) {
+        return items.map(function (t) {
+          return '<li class="' + cls + '"><span class="ico" style="color:var(--cyan)" aria-hidden="true">◆</span><span>' + t + "</span></li>";
+        }).join("");
+      }
+      set("data-p-benefits", "");
+      var b = document.querySelector("[data-p-benefits]");
+      if (b) b.innerHTML = d.benefits.map(function (t) { return '<li><span class="k">Навык</span><span>' + t + "</span></li>"; }).join("");
+
+      var s = document.querySelector("[data-p-structure]");
+      if (s) s.innerHTML = d.structure.map(function (t) { return '<li><span class="k">Этап</span><span>' + t + "</span></li>"; }).join("");
+
+      var tbody = document.querySelector("[data-p-schedule]");
+      if (tbody) tbody.innerHTML = d.schedule.map(function (r) {
+        return "<tr><td>" + r[0] + "</td><td>" + r[1] + "</td><td>" + r[2] + "</td></tr>";
+      }).join("");
+
+      var faq = document.querySelector("[data-p-faq]");
+      if (faq) faq.innerHTML = d.faq.map(function (f, i) {
+        return '<div class="acc-item"><button class="acc-item__q" aria-expanded="false"><span>' + f.q + '</span><span class="plus" aria-hidden="true">+</span></button><div class="acc-item__a"><div class="acc-item__a-inner">' + f.a + "</div></div></div>";
+      }).join("");
+
+      document.title = d.name + " — Angel Team · Фигурное катание";
+    })();
+  </script>
+</body>
+</html>

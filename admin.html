@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Панель управления — Angel Team</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;700;800&family=Manrope:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@1,400;1,500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Перейти к содержимому</a>
+  <canvas id="snow" aria-hidden="true"></canvas>
+
+  <header class="nav" data-nav>
+    <div class="container nav__inner">
+      <a class="logo" href="index.html" aria-label="Angel Team — на главную">
+        <svg class="logo__mark" viewBox="0 0 100 100" fill="none" aria-hidden="true"><g class="flake" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M50 4v92"/><path d="M11 27.5l78 45"/><path d="M11 72.5l78-45"/><circle cx="50" cy="50" r="3" fill="currentColor" stroke="none"/></g></svg>
+        <span class="logo__word">Angel Team<span class="logo__sub">панель управления</span></span>
+      </a>
+      <div class="nav__actions">
+        <button class="icon-btn theme-toggle" data-theme-toggle aria-label="Переключить тему" aria-pressed="false">
+          <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.6 4.6l1.8 1.8M17.6 17.6l1.8 1.8M4.6 19.4l1.8-1.8M17.6 6.4l1.8-1.8"/></svg>
+          <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg>
+        </button>
+        <a class="btn btn-ghost btn-sm" href="index.html">На сайт</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" class="admin">
+    <div class="container">
+
+      <!-- ===== LOGIN ===== -->
+      <section data-login-view>
+        <div class="glass admin-login">
+          <p class="eyebrow">Служебный вход</p>
+          <h1 class="display display--md">Панель управления</h1>
+          <p style="color:var(--txt-muted)">Доступ только для владельца и модераторов школы.</p>
+          <form class="mt-3" data-admin-login>
+            <div class="field">
+              <label for="admin-pass">Пароль</label>
+              <input type="password" id="admin-pass" name="password" autocomplete="current-password" required />
+              <span class="error">Введите пароль</span>
+            </div>
+            <button class="btn btn-primary mt-2" type="submit">Войти</button>
+            <div class="form-status" role="alert" aria-live="polite"></div>
+          </form>
+        </div>
+      </section>
+
+      <!-- ===== DASHBOARD ===== -->
+      <section data-dashboard hidden>
+        <div class="admin-head">
+          <div>
+            <p class="eyebrow">Панель управления</p>
+            <h1 class="display display--md">Angel Team</h1>
+          </div>
+          <div class="flex gap-2 flex-wrap">
+            <button class="btn btn-danger btn-sm" data-logout>Выйти</button>
+          </div>
+        </div>
+
+        <div class="admin-tabs" role="tablist">
+          <button class="chip is-active" data-tab="schedule" role="tab">Расписание</button>
+          <button class="chip" data-tab="blog" role="tab">Блог</button>
+        </div>
+
+        <!-- Schedule -->
+        <div class="admin-pane is-open" data-pane="schedule">
+          <div class="admin-head">
+            <h2 style="font-size:1.15rem; margin:0" class="display">Занятия на неделе</h2>
+            <button class="btn btn-primary btn-sm" data-add-schedule>+ Добавить занятие</button>
+          </div>
+
+          <form class="admin-form" data-schedule-form hidden>
+            <input type="hidden" data-s-id />
+            <div class="form-grid">
+              <div class="field">
+                <label for="s-day">День</label>
+                <select id="s-day" data-s-day>
+                  <option value="1">Понедельник</option>
+                  <option value="2">Вторник</option>
+                  <option value="3">Среда</option>
+                  <option value="4">Четверг</option>
+                  <option value="5">Пятница</option>
+                  <option value="6">Суббота</option>
+                  <option value="7">Воскресенье</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="s-time">Время</label>
+                <input id="s-time" type="text" data-s-time placeholder="17:00" />
+              </div>
+              <div class="field full">
+                <label for="s-name">Программа</label>
+                <input id="s-name" type="text" data-s-name placeholder="Малыши 3–5 лет" />
+              </div>
+              <div class="field">
+                <label for="s-level">Уровень</label>
+                <select id="s-level" data-s-level>
+                  <option value="kids">Дети</option>
+                  <option value="sport">Спорт</option>
+                  <option value="adult">Взрослые</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="s-venue">Площадка</label>
+                <select id="s-venue" data-s-venue>
+                  <option value="okeanis">ТРЦ «Океанис»</option>
+                  <option value="rio">ТРЦ «Рио»</option>
+                </select>
+              </div>
+            </div>
+            <div class="flex gap-2 mt-2">
+              <button class="btn btn-primary btn-sm" type="submit">Сохранить</button>
+              <button class="btn btn-quiet btn-sm" type="button" data-s-cancel>Отмена</button>
+            </div>
+          </form>
+
+          <div data-schedule-list></div>
+          <button class="btn btn-quiet btn-sm mt-3" data-reset-schedule>Сбросить к демо-данным</button>
+        </div>
+
+        <!-- Blog -->
+        <div class="admin-pane" data-pane="blog">
+          <div class="admin-head">
+            <h2 style="font-size:1.15rem; margin:0" class="display">Публикации</h2>
+            <button class="btn btn-primary btn-sm" data-add-blog>+ Добавить запись</button>
+          </div>
+
+          <form class="admin-form" data-blog-form hidden>
+            <input type="hidden" data-b-id />
+            <div class="form-grid">
+              <div class="field full">
+                <label for="b-title">Заголовок</label>
+                <input id="b-title" type="text" data-b-title placeholder="Заголовок публикации" />
+              </div>
+              <div class="field">
+                <label for="b-date">Дата</label>
+                <input id="b-date" type="text" data-b-date placeholder="12 мая 2025" />
+              </div>
+              <div class="field">
+                <label for="b-cat">Категория</label>
+                <input id="b-cat" type="text" data-b-cat placeholder="Анонс / Новость / Статья" />
+              </div>
+              <div class="field full">
+                <label for="b-body">Текст</label>
+                <textarea id="b-body" rows="4" data-b-body placeholder="Текст публикации…"></textarea>
+              </div>
+            </div>
+            <div class="flex gap-2 mt-2">
+              <button class="btn btn-primary btn-sm" type="submit">Сохранить</button>
+              <button class="btn btn-quiet btn-sm" type="button" data-b-cancel>Отмена</button>
+            </div>
+          </form>
+
+          <div data-blog-list></div>
+          <button class="btn btn-quiet btn-sm mt-3" data-reset-blog>Сбросить к демо-данным</button>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <script src="assets/js/main.js"></script>
+  <script>
+    (function () {
+      "use strict";
+      var PASS_HASH = "9498d2eecedc1a481002fbcd560cb2662026aefa5986f15125adb50f0bb8c0dd"; // sha256("angel2025")
+      var SESSION_KEY = "at_admin";
+      var SESSION_MS = 8 * 3600 * 1000;
+
+      var store = window.AT_STORE;
+      var loginView = document.querySelector("[data-login-view]");
+      var dashView = document.querySelector("[data-dashboard]");
+      var loginForm = document.querySelector("[data-admin-login]");
+      var loginStatus = loginForm ? loginForm.querySelector(".form-status") : null;
+
+      function escapeHtml(s) {
+        return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) {
+          return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
+        });
+      }
+
+      async function sha256(str) {
+        var buf = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(str));
+        return Array.from(new Uint8Array(buf)).map(function (b) { return b.toString(16).padStart(2, "0"); }).join("");
+      }
+
+      function isAuthed() {
+        try { return Number(localStorage.getItem(SESSION_KEY)) > Date.now(); } catch (e) { return false; }
+      }
+      function setAuthed() {
+        try { localStorage.setItem(SESSION_KEY, String(Date.now() + SESSION_MS)); } catch (e) {}
+      }
+      function clearAuth() {
+        try { localStorage.removeItem(SESSION_KEY); } catch (e) {}
+      }
+
+      function show(authed) {
+        loginView.hidden = authed;
+        dashView.hidden = !authed;
+        if (authed) renderAll();
+      }
+
+      /* ---- login ---- */
+      loginForm.addEventListener("submit", async function (e) {
+        e.preventDefault();
+        var field = loginForm.querySelector(".field");
+        var pass = loginForm.querySelector("#admin-pass").value;
+        var hash;
+        try { hash = await sha256(pass); }
+        catch (err) {
+          loginStatus.className = "form-status is-visible bad";
+          loginStatus.textContent = "Браузер не поддерживает безопасное хеширование. Откройте сайт через https или локальный сервер.";
+          return;
+        }
+        if (hash === PASS_HASH) {
+          setAuthed();
+          loginStatus.className = "form-status is-visible ok";
+          loginStatus.textContent = "Доступ разрешён.";
+          show(true);
+          loginForm.reset();
+        } else {
+          loginStatus.className = "form-status is-visible bad";
+          loginStatus.textContent = "Неверный пароль.";
+        }
+      });
+
+      document.querySelector("[data-logout]").addEventListener("click", function () {
+        clearAuth();
+        show(false);
+      });
+
+      /* ---- tabs ---- */
+      document.querySelectorAll("[data-tab]").forEach(function (t) {
+        t.addEventListener("click", function () {
+          document.querySelectorAll("[data-tab]").forEach(function (x) { x.classList.remove("is-active"); });
+          t.classList.add("is-active");
+          document.querySelectorAll("[data-pane]").forEach(function (p) { p.classList.remove("is-open"); });
+          document.querySelector('[data-pane="' + t.dataset.tab + '"]').classList.add("is-open");
+        });
+      });
+
+      /* ---- schedule CRUD ---- */
+      var sForm = document.querySelector("[data-schedule-form]");
+      var sList = document.querySelector("[data-schedule-list]");
+      var DAYS = ["Пн", "Вт", "Ср", "Чт", "Пт", "Сб", "Вс"];
+      var VENUES = { okeanis: "Океанис", rio: "Рио" };
+      var LEVELS = { kids: "Дети", sport: "Спорт", adult: "Взрослые" };
+
+      function renderSchedule() {
+        var items = store.getSchedule().sort(function (a, b) {
+          return (+a.day - +b.day) || (a.time || "").localeCompare(b.time || "");
+        });
+        if (!items.length) { sList.innerHTML = '<p style="color:var(--txt-faint)">Нет занятий.</p>'; return; }
+        sList.innerHTML = items.map(function (it) {
+          return '<div class="admin-row">' +
+            '<div class="admin-row__main">' +
+            '<div class="admin-row__title">' + escapeHtml(it.name) + "</div>" +
+            '<div class="admin-row__sub">' + DAYS[(+it.day - 1)] + " · " + escapeHtml(it.time) + " · " + (LEVELS[it.level] || it.level) + " · " + (VENUES[it.venue] || it.venue) + "</div>" +
+            "</div>" +
+            '<div class="admin-row__actions">' +
+            '<button class="btn btn-quiet btn-sm" data-s-edit="' + it.id + '">Изменить</button>' +
+            '<button class="btn btn-danger btn-sm" data-s-del="' + it.id + '">Удалить</button>' +
+            "</div></div>";
+        }).join("");
+      }
+
+      function openScheduleForm(item) {
+        sForm.hidden = false;
+        sForm.querySelector("[data-s-id]").value = item ? item.id : "";
+        sForm.querySelector("[data-s-day]").value = item ? item.day : 1;
+        sForm.querySelector("[data-s-time]").value = item ? item.time : "";
+        sForm.querySelector("[data-s-name]").value = item ? item.name : "";
+        sForm.querySelector("[data-s-level]").value = item ? item.level : "kids";
+        sForm.querySelector("[data-s-venue]").value = item ? item.venue : "okeanis";
+        sForm.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+
+      document.querySelector("[data-add-schedule]").addEventListener("click", function () { openScheduleForm(null); });
+      document.querySelector("[data-s-cancel]").addEventListener("click", function () { sForm.hidden = true; });
+
+      sForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+        var items = store.getSchedule();
+        var id = sForm.querySelector("[data-s-id]").value;
+        var obj = {
+          day: +sForm.querySelector("[data-s-day]").value,
+          time: sForm.querySelector("[data-s-time]").value.trim(),
+          name: sForm.querySelector("[data-s-name]").value.trim(),
+          level: sForm.querySelector("[data-s-level]").value,
+          venue: sForm.querySelector("[data-s-venue]").value
+        };
+        if (!obj.name || !obj.time) { alert("Заполните время и название программы."); return; }
+        if (id) {
+          items = items.map(function (it) { return String(it.id) === String(id) ? Object.assign({}, it, obj) : it; });
+        } else {
+          obj.id = store.nextId(items);
+          items.push(obj);
+        }
+        store.saveSchedule(items);
+        sForm.hidden = true;
+        renderSchedule();
+      });
+
+      sList.addEventListener("click", function (e) {
+        var ed = e.target.closest("[data-s-edit]");
+        var del = e.target.closest("[data-s-del]");
+        var items = store.getSchedule();
+        if (ed) {
+          var it = items.find(function (x) { return String(x.id) === String(ed.dataset.sEdit); });
+          if (it) openScheduleForm(it);
+        }
+        if (del) {
+          if (confirm("Удалить занятие?")) {
+            store.saveSchedule(items.filter(function (x) { return String(x.id) !== String(del.dataset.sDel); }));
+            renderSchedule();
+          }
+        }
+      });
+
+      document.querySelector("[data-reset-schedule]").addEventListener("click", function () {
+        if (confirm("Вернуть демо-расписание?")) { store.resetSchedule(); renderSchedule(); }
+      });
+
+      /* ---- blog CRUD ---- */
+      var bForm = document.querySelector("[data-blog-form]");
+      var bList = document.querySelector("[data-blog-list]");
+
+      function renderBlog() {
+        var items = store.getBlog();
+        if (!items.length) { bList.innerHTML = '<p style="color:var(--txt-faint)">Нет публикаций.</p>'; return; }
+        bList.innerHTML = items.map(function (it) {
+          return '<div class="admin-row">' +
+            '<div class="admin-row__main">' +
+            '<div class="admin-row__title">' + escapeHtml(it.title) + "</div>" +
+            '<div class="admin-row__sub">' + escapeHtml(it.date) + " · " + escapeHtml(it.category) + "</div>" +
+            "</div>" +
+            '<div class="admin-row__actions">' +
+            '<button class="btn btn-quiet btn-sm" data-b-edit="' + it.id + '">Изменить</button>' +
+            '<button class="btn btn-danger btn-sm" data-b-del="' + it.id + '">Удалить</button>' +
+            "</div></div>";
+        }).join("");
+      }
+
+      function openBlogForm(item) {
+        bForm.hidden = false;
+        bForm.querySelector("[data-b-id]").value = item ? item.id : "";
+        bForm.querySelector("[data-b-title]").value = item ? item.title : "";
+        bForm.querySelector("[data-b-date]").value = item ? item.date : "";
+        bForm.querySelector("[data-b-cat]").value = item ? item.category : "";
+        bForm.querySelector("[data-b-body]").value = item ? item.body : "";
+        bForm.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+
+      document.querySelector("[data-add-blog]").addEventListener("click", function () { openBlogForm(null); });
+      document.querySelector("[data-b-cancel]").addEventListener("click", function () { bForm.hidden = true; });
+
+      bForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+        var items = store.getBlog();
+        var id = bForm.querySelector("[data-b-id]").value;
+        var obj = {
+          title: bForm.querySelector("[data-b-title]").value.trim(),
+          date: bForm.querySelector("[data-b-date]").value.trim(),
+          category: bForm.querySelector("[data-b-cat]").value.trim(),
+          body: bForm.querySelector("[data-b-body]").value.trim()
+        };
+        if (!obj.title) { alert("Укажите заголовок."); return; }
+        if (id) {
+          items = items.map(function (it) { return String(it.id) === String(id) ? Object.assign({}, it, obj) : it; });
+        } else {
+          obj.id = store.nextId(items);
+          items.unshift(obj);
+        }
+        store.saveBlog(items);
+        bForm.hidden = true;
+        renderBlog();
+      });
+
+      bList.addEventListener("click", function (e) {
+        var ed = e.target.closest("[data-b-edit]");
+        var del = e.target.closest("[data-b-del]");
+        var items = store.getBlog();
+        if (ed) {
+          var it = items.find(function (x) { return String(x.id) === String(ed.dataset.bEdit); });
+          if (it) openBlogForm(it);
+        }
+        if (del) {
+          if (confirm("Удалить публикацию?")) {
+            store.saveBlog(items.filter(function (x) { return String(x.id) !== String(del.dataset.bDel); }));
+            renderBlog();
+          }
+        }
+      });
+
+      document.querySelector("[data-reset-blog]").addEventListener("click", function () {
+        if (confirm("Вернуть демо-записи блога?")) { store.resetBlog(); renderBlog(); }
+      });
+
+      function renderAll() { renderSchedule(); renderBlog(); }
+
+      show(isAuthed());
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>О школе — Angel Team · Школа фигурного катания</title>
+  <meta name="description" content="История школы фигурного катания Angel Team, достижения учеников, фотогалерея с соревнований, партнёры и пресса о нас." />
+  <link rel="canonical" href="https://angelteam-nn.ru/about.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;700;800&family=Manrope:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@1,400;1,500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Перейти к содержимому</a>
+  <canvas id="snow" aria-hidden="true"></canvas>
+
+  <header class="nav" data-nav>
+    <div class="container nav__inner">
+      <a class="logo" href="index.html" aria-label="Angel Team — на главную">
+        <svg class="logo__mark" viewBox="0 0 100 100" fill="none" aria-hidden="true"><g class="flake" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M50 4v92"/><path d="M11 27.5l78 45"/><path d="M11 72.5l78-45"/><circle cx="50" cy="50" r="3" fill="currentColor" stroke="none"/></g></svg>
+        <span class="logo__word">Angel Team<span class="logo__sub">школа фигурного катания</span></span>
+      </a>
+      <nav class="nav__menu" id="menu" aria-label="Основная навигация">
+        <a class="nav__link" href="programs.html">Программы</a>
+        <a class="nav__link" href="trainers.html">Тренеры</a>
+        <a class="nav__link" href="schedule.html">Расписание</a>
+        <a class="nav__link" href="parents.html">Родителям</a>
+        <a class="nav__link is-active" href="about.html">О школе</a>
+        <a class="nav__link" href="blog.html">Блог</a>
+        <a class="nav__link" href="contacts.html">Контакты</a>
+        <button class="nav__theme" data-theme-toggle aria-label="Переключить тему" aria-pressed="false">
+          <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.6 4.6l1.8 1.8M17.6 17.6l1.8 1.8M4.6 19.4l1.8-1.8M17.6 6.4l1.8-1.8"/></svg>
+          <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg>
+          <span>Тема</span>
+        </button>
+      </nav>
+      <div class="nav__actions">
+        <button class="icon-btn theme-toggle" data-theme-toggle aria-label="Переключить тему" aria-pressed="false">
+          <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.6 4.6l1.8 1.8M17.6 17.6l1.8 1.8M4.6 19.4l1.8-1.8M17.6 6.4l1.8-1.8"/></svg>
+          <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg>
+        </button>
+        <a class="btn btn-primary btn-sm nav__cta" href="contacts.html#form">Записаться</a>
+        <button class="burger nav__burger" aria-label="Открыть меню" aria-expanded="false" aria-controls="menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="page-hero__bg" aria-hidden="true"></div>
+      <div class="container">
+        <nav class="crumb" aria-label="Хлебные крошки"><a href="index.html">Главная</a> / О школе</nav>
+        <p class="eyebrow reveal">О школе</p>
+        <h1 class="display display--xl reveal" data-delay="1">История, написанная<br /><span class="text-gradient">на льду</span></h1>
+        <p class="lead reveal" data-delay="2">С 2013 года мы растим фигуристов — от первых шагов до пьедесталов. Рассказываем, как всё начиналось и чем мы гордимся.</p>
+      </div>
+    </section>
+
+    <section class="section section--tight">
+      <div class="container">
+        <div class="grid-2">
+          <div class="reveal">
+            <p class="quote">«Мы начинали с одного льда и веры, что в Нижнем Новгороде можно растить чемпионов. Спустя годы — сотни учеников и медали, но цель не изменилась.»</p>
+            <p class="mt-2" style="color:var(--txt-faint)">— Основатели Angel Team</p>
+          </div>
+          <div class="glass feature reveal" data-delay="1">
+            <h3>Наша история</h3>
+            <p style="color:var(--txt-muted)">Angel Team родился из небольшой группы энтузиастов на катке в ТРЦ «Рио». Сегодня это две арены, полный тренерский штаб и программы для всех возрастов — от трёхлеток до взрослых любителей.</p>
+            <p style="color:var(--txt-muted); margin:0">Мы выросли, но сохранили главное: малые группы, внимание к каждому ученику и честный подход к спорту.</p>
+          </div>
+        </div>
+
+        <h2 class="display display--lg mt-5 reveal">Достижения учеников</h2>
+        <div class="grid-3 mt-3">
+          <article class="glass adv reveal"><div class="adv__num">150+</div><h3>Медалей</h3><p>На городских, областных и всероссийских соревнованиях за время работы школы.</p></article>
+          <article class="glass adv reveal" data-delay="1"><div class="adv__num">40+</div><h3>Разрядников</h3><p>Учеников, выполнивших юношеские и взрослые спортивные разряды.</p></article>
+          <article class="glass adv reveal" data-delay="2"><div class="adv__num">3</div><h3>Победителя ПФО</h3><p>Наши спортсмены поднимались на пьедестал первенства Приволжского округа.</p></article>
+        </div>
+
+        <h2 class="display display--lg mt-5 reveal">Фотогалерея</h2>
+        <div class="grid-4 mt-3">
+          <div class="glass card-link reveal" style="aspect-ratio:1; background:linear-gradient(150deg,#1a2845,#0a0f1f); display:grid; place-items:center"><span style="color:var(--txt-faint); font-size:0.8rem">Фото с турнира</span></div>
+          <div class="glass card-link reveal" data-delay="1" style="aspect-ratio:1; background:linear-gradient(150deg,#16233f,#0a0f1f); display:grid; place-items:center"><span style="color:var(--txt-faint); font-size:0.8rem">Прокаты</span></div>
+          <div class="glass card-link reveal" data-delay="2" style="aspect-ratio:1; background:linear-gradient(150deg,#13203c,#0a0f1f); display:grid; place-items:center"><span style="color:var(--txt-faint); font-size:0.8rem">Тренировки</span></div>
+          <div class="glass card-link reveal" data-delay="3" style="aspect-ratio:1; background:linear-gradient(150deg,#1b2a4a,#0a0f1f); display:grid; place-items:center"><span style="color:var(--txt-faint); font-size:0.8rem">Награждения</span></div>
+        </div>
+
+        <h2 class="display display--lg mt-5 reveal">Партнёры и пресса</h2>
+        <div class="grid-2 mt-3">
+          <div class="glass feature reveal">
+            <h3>Партнёры</h3>
+            <ul class="meta-list">
+              <li><span class="k">Арены</span><span>ТРЦ «Океанис», ТРЦ «Рио»</span></li>
+              <li><span class="k">Магазины</span><span>Спортивные магазины коньков и экипировки (скидка ученикам)</span></li>
+              <li><span class="k">Федерация</span><span>Федерация фигурного катания региона</span></li>
+            </ul>
+          </div>
+          <div class="glass feature reveal" data-delay="1">
+            <h3>Пресса о нас</h3>
+            <ul class="meta-list">
+              <li><span class="k">2024</span><span>«Angel Team: как частная школа растит чемпионов» — городской портал</span></li>
+              <li><span class="k">2023</span><span>Репортаж о летних сборах школы — региональное ТВ</span></li>
+              <li><span class="k">2022</span><span>Интервью с тренерами о детском спорте — журнал о здоровье</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <a class="logo" href="index.html" aria-label="Angel Team — на главную">
+            <svg class="logo__mark" viewBox="0 0 100 100" fill="none" aria-hidden="true"><g class="flake" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M50 4v92"/><path d="M11 27.5l78 45"/><path d="M11 72.5l78-45"/><circle cx="50" cy="50" r="3" fill="currentColor" stroke="none"/></g></svg>
+            <span class="logo__word">Angel Team</span>
+          </a>
+          <p class="mt-2" style="color:var(--txt-faint); font-size:0.9rem">Академия фигурного катания для детей и взрослых.</p>
+        </div>
+        <nav aria-label="Навигация в подвале">
+          <h4>Навигация</h4>
+          <ul>
+            <li><a href="programs.html">Программы</a></li>
+            <li><a href="trainers.html">Тренеры</a></li>
+            <li><a href="schedule.html">Расписание</a></li>
+            <li><a href="about.html">О школе</a></li>
+          </ul>
+          <button class="nav__theme" data-theme-toggle aria-label="Переключить тему" aria-pressed="false">
+          <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.6 4.6l1.8 1.8M17.6 17.6l1.8 1.8M4.6 19.4l1.8-1.8M17.6 6.4l1.8-1.8"/></svg>
+          <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg>
+          <span>Тема</span>
+        </button>
+      </nav>
+        <div>
+          <h4>Контакты</h4>
+          <ul>
+            <li><a href="tel:+78310000000">+7 (831) 000-00-00</a></li>
+            <li><a href="mailto:hello@angelteam-nn.ru">hello@angelteam-nn.ru</a></li>
+            <li><span>ТРЦ «Океанис» и ТРЦ «Рио»</span></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Клиентам</h4>
+          <ul>
+            <li><a href="corporate.html">Корпоративным клиентам</a></li>
+            <li><a href="parents.html#docs">Документы</a></li>
+            <li><a href="contacts.html">Связаться с нами</a></li>
+            <li><a href="admin.html">Вход для персонала</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom"><span>© 2025 Angel Team</span><span>Нижний Новгород · Твой лёд. Твоя история.</span></div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
